@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <script>
+      function determineCareer(skills) {
+        let hasHTML = skills.includes("html");
+        let  hasCSS = skills.includes("css");
+        let hasBootstrap = skills.includes("bootstrap");
+        let hasJS = skills.includes("js");
+        let hasReact = skills.includes("react");
+        let hasNode = skills.includes("node");
+
+        if (
+          hasHTML &&
+          hasCSS &&
+          hasBootstrap &&
+          !hasJS &&
+          hasReact &&
+          hasNode
+        ) {
+          return "UI/UX DESIGNER";
+        } else if (
+          hasHTML &&
+          hasCSS &&
+          hasBootstrap &&
+          hasJS &&
+          hasReact &&
+          !hasNode
+        ) {
+          return "Frontend Developer";
+        } else if (
+          hasHTML &&
+          hasCSS &&
+          hasBootstrap &&
+          hasJS &&
+          hasNode &&
+          !hasReact
+        ) {
+          return "Backend Developer";
+        } else if (
+          hasHTML &&
+          hasCSS &&
+          hasBootstrap &&
+          hasJS &&
+          hasNode &&
+          hasReact
+        ) {
+          return "Fullstack Developer";
+        } else {
+          return "Go and join 10000-coders";
+        }
+      }
+
+      console.log(determineCareer(["html", "css", "bootstrap", "js", "react"]));
+      console.log(determineCareer(["html", "css", "bootstrap", "js", "node"]));
+      console.log(determineCareer(["html", "css", "bootstrap", "js", "node", "react"]));
+      console.log(determineCareer(["html", "css", "bootstrap", "react", "node"]));
+      console.log(determineCareer([]));
+    </script>
+  </body>
+</html>
